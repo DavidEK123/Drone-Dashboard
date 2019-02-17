@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Drone Dashboard</title>
+    <link rel = "stylesheet" href = "dashing.css">
+	</head>
+  <body>
+    <div class="bigbox">
+      <div class="side">
+        <div class="miniside">
+
+          <form class="box" action="index.html" method = "post">
+            <input type="text" name="" placeholder="Speed">
+            <input type="submit" name="" value="Calibrate">
+            <div class="sideContent">30 mp/h
+            </div>
+          </form>
+        </div>
+        <div class="miniside">
+
+          <form class="box" action="index.html" method = "post">
+            <input type="text" name="" placeholder="Lat/Long">
+            <input type="submit" name="" value="Calibrate">
+            <div class="sideContent">
+              Lat = 37.787683
+               Long = -122.41094
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="main">
+        <video autoplay="true" id="videoElement">
+
+        </video>
+        <div class="overlay">
+<<div class="hud">
+<img src="C:\Users\David\Desktop\Drone-Dashboard\images\hud1.png" alt="hud" height="100%" width="100%">
+
+</div>
+          <div class="battery">
+            <img src="C:\Users\David\Downloads\519973-036_Battery-512.png" alt="Battery" height="80" width="80">
+
+          </div>
+          <div class="wifi">
+<img src="C:\Users\David\Downloads\wifiii.png" alt="Battery" height="35" width="35">
+
+          </div>
+        </div>
+      </div>
+      <div class="side">
+
+        <div class="miniside">
+
+          <form class="box" action="index.html" method = "post">
+            <input type="text" name="" placeholder="Altitude">
+            <input type="submit" name="" value="Calibrate">
+            <div class="sideContent">10.167 Ft</div>
+          </form>
+        </div>
+        <div class="miniside">
+
+          <form class="box" action="index.html" method = "post">
+            <input type="text" name="" placeholder="Orientation">
+            <input type="submit" name="" value="Calibrate">
+            <div class="sideContent">30%</div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+
+
+    <script>
+        var video = document.querySelector("#videoElement");
+
+     if (navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({video: true})
+         .then(function(stream) {
+           video.srcObject = stream;
+         })
+         .catch(function(err0r) {
+           console.log("Something went wrong!");
+         });
+     }
+
+    </script>
+
+  </body>
+</html>
